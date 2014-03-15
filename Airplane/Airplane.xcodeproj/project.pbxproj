@@ -25,6 +25,13 @@
 		5344482118D4C9B6002E1D69 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 534447F918D4C9B6002E1D69 /* UIKit.framework */; };
 		5344482918D4C9B6002E1D69 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 5344482718D4C9B6002E1D69 /* InfoPlist.strings */; };
 		5344482B18D4C9B6002E1D69 /* AirplaneTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 5344482A18D4C9B6002E1D69 /* AirplaneTests.m */; };
+		5344483B18D4CBE1002E1D69 /* airPlanesBackground.png in Resources */ = {isa = PBXBuildFile; fileRef = 5344483418D4CBE1002E1D69 /* airPlanesBackground.png */; };
+		5344483C18D4CBE2002E1D69 /* PLANE 8 L.png in Resources */ = {isa = PBXBuildFile; fileRef = 5344483518D4CBE1002E1D69 /* PLANE 8 L.png */; };
+		5344483D18D4CBE2002E1D69 /* PLANE 8 N.png in Resources */ = {isa = PBXBuildFile; fileRef = 5344483618D4CBE1002E1D69 /* PLANE 8 N.png */; };
+		5344483E18D4CBE2002E1D69 /* PLANE 8 R.png in Resources */ = {isa = PBXBuildFile; fileRef = 5344483718D4CBE1002E1D69 /* PLANE 8 R.png */; };
+		5344483F18D4CBE2002E1D69 /* PLANE 8 SHADOW.png in Resources */ = {isa = PBXBuildFile; fileRef = 5344483818D4CBE1002E1D69 /* PLANE 8 SHADOW.png */; };
+		5344484018D4CBE2002E1D69 /* PLANE PROPELLER 1.png in Resources */ = {isa = PBXBuildFile; fileRef = 5344483918D4CBE1002E1D69 /* PLANE PROPELLER 1.png */; };
+		5344484118D4CBE2002E1D69 /* PLANE PROPELLER 2.png in Resources */ = {isa = PBXBuildFile; fileRef = 5344483A18D4CBE1002E1D69 /* PLANE PROPELLER 2.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -62,6 +69,13 @@
 		5344482618D4C9B6002E1D69 /* AirplaneTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "AirplaneTests-Info.plist"; sourceTree = "<group>"; };
 		5344482818D4C9B6002E1D69 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		5344482A18D4C9B6002E1D69 /* AirplaneTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AirplaneTests.m; sourceTree = "<group>"; };
+		5344483418D4CBE1002E1D69 /* airPlanesBackground.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = airPlanesBackground.png; sourceTree = "<group>"; };
+		5344483518D4CBE1002E1D69 /* PLANE 8 L.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "PLANE 8 L.png"; sourceTree = "<group>"; };
+		5344483618D4CBE1002E1D69 /* PLANE 8 N.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "PLANE 8 N.png"; sourceTree = "<group>"; };
+		5344483718D4CBE1002E1D69 /* PLANE 8 R.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "PLANE 8 R.png"; sourceTree = "<group>"; };
+		5344483818D4CBE1002E1D69 /* PLANE 8 SHADOW.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "PLANE 8 SHADOW.png"; sourceTree = "<group>"; };
+		5344483918D4CBE1002E1D69 /* PLANE PROPELLER 1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "PLANE PROPELLER 1.png"; sourceTree = "<group>"; };
+		5344483A18D4CBE1002E1D69 /* PLANE PROPELLER 2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "PLANE PROPELLER 2.png"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -141,6 +155,13 @@
 		534447FE18D4C9B6002E1D69 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				5344483418D4CBE1002E1D69 /* airPlanesBackground.png */,
+				5344483518D4CBE1002E1D69 /* PLANE 8 L.png */,
+				5344483618D4CBE1002E1D69 /* PLANE 8 N.png */,
+				5344483718D4CBE1002E1D69 /* PLANE 8 R.png */,
+				5344483818D4CBE1002E1D69 /* PLANE 8 SHADOW.png */,
+				5344483918D4CBE1002E1D69 /* PLANE PROPELLER 1.png */,
+				5344483A18D4CBE1002E1D69 /* PLANE PROPELLER 2.png */,
 				534447FF18D4C9B6002E1D69 /* Airplane-Info.plist */,
 				5344480018D4C9B6002E1D69 /* InfoPlist.strings */,
 				5344480318D4C9B6002E1D69 /* main.m */,
@@ -244,10 +265,17 @@
 			buildActionMask = 2147483647;
 			files = (
 				5344481618D4C9B6002E1D69 /* Spaceship.png in Resources */,
+				5344483F18D4CBE2002E1D69 /* PLANE 8 SHADOW.png in Resources */,
+				5344483B18D4CBE1002E1D69 /* airPlanesBackground.png in Resources */,
 				5344481818D4C9B6002E1D69 /* Images.xcassets in Resources */,
 				5344480E18D4C9B6002E1D69 /* Main_iPad.storyboard in Resources */,
 				5344480B18D4C9B6002E1D69 /* Main_iPhone.storyboard in Resources */,
 				5344480218D4C9B6002E1D69 /* InfoPlist.strings in Resources */,
+				5344484118D4CBE2002E1D69 /* PLANE PROPELLER 2.png in Resources */,
+				5344483E18D4CBE2002E1D69 /* PLANE 8 R.png in Resources */,
+				5344483D18D4CBE2002E1D69 /* PLANE 8 N.png in Resources */,
+				5344483C18D4CBE2002E1D69 /* PLANE 8 L.png in Resources */,
+				5344484018D4CBE2002E1D69 /* PLANE PROPELLER 1.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
