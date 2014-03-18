@@ -17,6 +17,17 @@
         screenRect = [[UIScreen mainScreen] bounds];
         screenHeight = screenRect.size.height;
         screenWidth = screenRect.size.width;
+        
+        _plane = [SKSpriteNode spriteNodeWithImageNamed:@"PLANE 8 N"];
+        _plane.scale = 0.6;
+        _plane.zPosition = 2;
+        _plane.position = CGPointMake(screenWidth/2, 15+_plane.size.height/2);
+        
+        SKSpriteNode *background = [SKSpriteNode spriteNodeWithImageNamed:@"airPlanesBackground"];
+        background.position = CGPointMake(CGRectGetMidX(self.frame), CGRectGetMidY(self.frame));
+        
+        [self addChild:background];
+        [self addChild:_plane];
     }
     return self;
 }
