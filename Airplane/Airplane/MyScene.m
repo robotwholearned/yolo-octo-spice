@@ -53,21 +53,35 @@
         self.motionManager.accelerometerUpdateInterval = 0.2;
         
         [self.motionManager startAccelerometerUpdatesToQueue:[NSOperationQueue currentQueue] withHandler:^(CMAccelerometerData *accelerometerData, NSError *error)
-        {
-            [self outputAccelertionData:accelerometerData.acceleration];
-            if(error)
-            {
-                NSLog(@"%@", error);
-            }
-            
-        }];
+         {
+             [self outputAccelertionData:accelerometerData.acceleration];
+             if(error)
+             {
+                 NSLog(@"%@", error);
+             }
+             
+         }];
     }
     return self;
 }
+//Now that you have the values of the accelerometer
 -(void)outputAccelertionData:(CMAcceleration)acceleration
 {
     currentMaxAccelX = 0;
     currentMaxAccelY = 0;
+    
+    //    x - X-axis acceleration in G's (gravitational force).
+    //    y - Y-axis acceleration in G's (gravitational force).
+    //    z - Z-axis acceleration in G's (gravitational force).
+    
+    if(fabs(acceleration.x) > fabs(currentMaxAccelX))
+    {
+        currentMaxAccelX = acceleration.x;
+    }
+    if(fabs(acceleration.y) > fabs(currentMaxAccelY))
+    {
+        currentMaxAccelY = acceleration.y;
+    }
 }
 
 -(void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event
@@ -79,6 +93,33 @@
 -(void)update:(CFTimeInterval)currentTime
 {
     /* Called before each frame is rendered */
+    float maxX, maxY, minX, minY, newY, newX;
+    
+    maxY = screenWidth - self.plane.size.width/2;
+    minY = self.plane.size.width/2;
+    
+    maxX = screenHeight - self.plane.size.height/2;
+    minX = self.plane.size.height/2;
+    
+    newY = 0;
+    newX = 0;
+    
+    newX = currentMaxAccelX * 10;
+    
+    if(currentMaxAccelX > 0.05)
+    {
+        self.plane.texture = [SKTexture textureWithImageNamed:@"PLANE 8 R"];
+    }
+    else if (currentMaxAccelX < -0.05)
+    {
+        self.plane.texture = [SKTexture textureWithImageNamed:@"PLANE 8 L"];
+    }
+    else
+    {
+        self.plane.texture = [SKTexture textureWithImageNamed:@"PLANE 8 N"];
+    }
+    newY = 6.0 + currentMaxAccelY * 10;
+    
+    
 }
-
 @end
