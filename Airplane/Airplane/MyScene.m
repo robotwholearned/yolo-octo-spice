@@ -31,9 +31,23 @@
         _planeShadow.zPosition = 1;
         _planeShadow.position = CGPointMake(screenWidth/2+15, 0+_plane.size.height/2);
         
+        _propeller = [SKSpriteNode spriteNodeWithImageNamed:@"PLANE PROPELLER 1"];
+        _propeller.scale = 0.2;
+        _propeller.position = CGPointMake(screenWidth/2, _plane.size.height+10);
+        _propeller.zPosition = 3;
+        
+        SKTexture *propeller1 = [SKTexture textureWithImageNamed:@"PLANE PROPELLER 1"];
+        SKTexture *propeller2 = [SKTexture textureWithImageNamed:@"PLANE PROPELLER 2"];
+        
+        SKAction *spin = [SKAction animateWithTextures:@[propeller1, propeller2] timePerFrame:0.1];
+        SKAction *spinForever = [SKAction repeatActionForever:spin];
+        [_propeller runAction:spinForever];
+        
+        
         [self addChild:background];
         [self addChild:_plane];
         [self addChild:_planeShadow];
+        [self addChild:_propeller];
     }
     return self;
 }

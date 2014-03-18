@@ -17,5 +17,6 @@
 
 @property SKSpriteNode *plane;
 @property SKSpriteNode *planeShadow;
+@property SKSpriteNode *propeller;
 
 @end
