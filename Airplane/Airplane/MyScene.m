@@ -93,7 +93,7 @@
 -(void)update:(CFTimeInterval)currentTime
 {
     /* Called before each frame is rendered */
-    float maxX, maxY, minX, minY, newY, newX;
+    float maxX, maxY, minX, minY, newY, newX, newXshadow, newYshadow, newXpropeller, newYpropeller;
     
     maxY = screenWidth - self.plane.size.width/2;
     minY = self.plane.size.width/2;
@@ -120,6 +120,23 @@
     }
     newY = 6.0 + currentMaxAccelY * 10;
     
+    newXshadow = newX+self.planeShadow.position.x;
+    newYshadow = newY+self.planeShadow.position.y;
     
+    newXshadow = MIN(MAX(newXshadow,minY+15),maxY+15);
+    newYshadow = MIN(MAX(newYshadow,minX-15),maxX-15);
+    
+    newXpropeller = newX+self.propeller.position.x;
+    newYpropeller = newY+self.propeller.position.y;
+    
+    newXpropeller = MIN(MAX(newXpropeller,minY),maxY);
+    newYpropeller = MIN(MAX(newYpropeller,minX+(self.plane.size.height/2)-5),maxX+(self.plane.size.height/2)-5);
+    
+    newX = MIN(MAX(newX+self.plane.position.x,minY),maxY);
+    newY = MIN(MAX(newY+self.plane.position.y,minX),maxX);
+    
+    self.plane.position = CGPointMake(newX, newY);
+    self.planeShadow.position = CGPointMake(newXshadow, newYshadow);
+    self.propeller.position = CGPointMake(newXpropeller, newYpropeller);
 }
 @end
