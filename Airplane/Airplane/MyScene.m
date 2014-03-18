@@ -48,6 +48,9 @@
         [self addChild:_plane];
         [self addChild:_planeShadow];
         [self addChild:_propeller];
+        
+        self.motionManager   = [[CMMotionManager alloc] init];
+        self.motionManager.accelerometerUpdateInterval = 0.2;
     }
     return self;
 }
