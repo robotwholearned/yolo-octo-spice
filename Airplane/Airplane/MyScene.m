@@ -51,8 +51,23 @@
         
         self.motionManager   = [[CMMotionManager alloc] init];
         self.motionManager.accelerometerUpdateInterval = 0.2;
+        
+        [self.motionManager startAccelerometerUpdatesToQueue:[NSOperationQueue currentQueue] withHandler:^(CMAccelerometerData *accelerometerData, NSError *error)
+        {
+            [self outputAccelertionData:accelerometerData.acceleration];
+            if(error)
+            {
+                NSLog(@"%@", error);
+            }
+            
+        }];
     }
     return self;
+}
+-(void)outputAccelertionData:(CMAcceleration)acceleration
+{
+    currentMaxAccelX = 0;
+    currentMaxAccelY = 0;
 }
 
 -(void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event
