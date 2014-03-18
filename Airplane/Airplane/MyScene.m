@@ -18,16 +18,22 @@
         screenHeight = screenRect.size.height;
         screenWidth = screenRect.size.width;
         
+        SKSpriteNode *background = [SKSpriteNode spriteNodeWithImageNamed:@"airPlanesBackground"];
+        background.position = CGPointMake(CGRectGetMidX(self.frame), CGRectGetMidY(self.frame));
+        
         _plane = [SKSpriteNode spriteNodeWithImageNamed:@"PLANE 8 N"];
         _plane.scale = 0.6;
         _plane.zPosition = 2;
         _plane.position = CGPointMake(screenWidth/2, 15+_plane.size.height/2);
         
-        SKSpriteNode *background = [SKSpriteNode spriteNodeWithImageNamed:@"airPlanesBackground"];
-        background.position = CGPointMake(CGRectGetMidX(self.frame), CGRectGetMidY(self.frame));
+        _planeShadow = [SKSpriteNode spriteNodeWithImageNamed:@"PLANE 8 SHADOW"];
+        _planeShadow.scale = 0.6;
+        _planeShadow.zPosition = 1;
+        _planeShadow.position = CGPointMake(screenWidth/2+15, 0+_plane.size.height/2);
         
         [self addChild:background];
         [self addChild:_plane];
+        [self addChild:_planeShadow];
     }
     return self;
 }

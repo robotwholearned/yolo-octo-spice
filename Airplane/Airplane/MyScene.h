@@ -16,5 +16,6 @@
 }
 
 @property SKSpriteNode *plane;
+@property SKSpriteNode *planeShadow;
 
 @end
