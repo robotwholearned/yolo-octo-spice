@@ -514,6 +514,7 @@
 				5344483018D4C9B6002E1D69 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		5344483118D4C9B6002E1D69 /* Build configuration list for PBXNativeTarget "AirplaneTests" */ = {
 			isa = XCConfigurationList;
@@ -522,6 +523,7 @@
 				5344483318D4C9B6002E1D69 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
