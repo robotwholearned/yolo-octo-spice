@@ -44,10 +44,16 @@
         [_propeller runAction:spinForever];
         
         
+        //adding the smokeTrail
+        NSString *smokePath = [[NSBundle mainBundle] pathForResource:@"Smoke" ofType:@"sks"];
+        _smokeTrail = [NSKeyedUnarchiver unarchiveObjectWithFile:smokePath];
+        _smokeTrail.position = CGPointMake(screenWidth/2, 15);
+
         [self addChild:background];
         [self addChild:_plane];
         [self addChild:_planeShadow];
         [self addChild:_propeller];
+        [self addChild:_smokeTrail];
         
         self.motionManager   = [[CMMotionManager alloc] init];
         self.motionManager.accelerometerUpdateInterval = 0.2;
@@ -138,5 +144,6 @@
     self.plane.position = CGPointMake(newX, newY);
     self.planeShadow.position = CGPointMake(newXshadow, newYshadow);
     self.propeller.position = CGPointMake(newXpropeller, newYpropeller);
+    self.smokeTrail.position = CGPointMake(newX,newY-(_plane.size.height/2));
 }
 @end
