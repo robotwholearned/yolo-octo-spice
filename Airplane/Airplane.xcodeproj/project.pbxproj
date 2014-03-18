@@ -32,6 +32,8 @@
 		5344483F18D4CBE2002E1D69 /* PLANE 8 SHADOW.png in Resources */ = {isa = PBXBuildFile; fileRef = 5344483818D4CBE1002E1D69 /* PLANE 8 SHADOW.png */; };
 		5344484018D4CBE2002E1D69 /* PLANE PROPELLER 1.png in Resources */ = {isa = PBXBuildFile; fileRef = 5344483918D4CBE1002E1D69 /* PLANE PROPELLER 1.png */; };
 		5344484118D4CBE2002E1D69 /* PLANE PROPELLER 2.png in Resources */ = {isa = PBXBuildFile; fileRef = 5344483A18D4CBE1002E1D69 /* PLANE PROPELLER 2.png */; };
+		F004AC3818D8F73400945D32 /* trail.sks in Resources */ = {isa = PBXBuildFile; fileRef = F004AC3618D8F73400945D32 /* trail.sks */; };
+		F004AC3918D8F73400945D32 /* spark.png in Resources */ = {isa = PBXBuildFile; fileRef = F004AC3718D8F73400945D32 /* spark.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -76,6 +78,8 @@
 		5344483818D4CBE1002E1D69 /* PLANE 8 SHADOW.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "PLANE 8 SHADOW.png"; sourceTree = "<group>"; };
 		5344483918D4CBE1002E1D69 /* PLANE PROPELLER 1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "PLANE PROPELLER 1.png"; sourceTree = "<group>"; };
 		5344483A18D4CBE1002E1D69 /* PLANE PROPELLER 2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "PLANE PROPELLER 2.png"; sourceTree = "<group>"; };
+		F004AC3618D8F73400945D32 /* trail.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = trail.sks; sourceTree = "<group>"; };
+		F004AC3718D8F73400945D32 /* spark.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = spark.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -155,6 +159,8 @@
 		534447FE18D4C9B6002E1D69 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				F004AC3618D8F73400945D32 /* trail.sks */,
+				F004AC3718D8F73400945D32 /* spark.png */,
 				5344483418D4CBE1002E1D69 /* airPlanesBackground.png */,
 				5344483518D4CBE1002E1D69 /* PLANE 8 L.png */,
 				5344483618D4CBE1002E1D69 /* PLANE 8 N.png */,
@@ -267,10 +273,12 @@
 				5344481618D4C9B6002E1D69 /* Spaceship.png in Resources */,
 				5344483F18D4CBE2002E1D69 /* PLANE 8 SHADOW.png in Resources */,
 				5344483B18D4CBE1002E1D69 /* airPlanesBackground.png in Resources */,
+				F004AC3918D8F73400945D32 /* spark.png in Resources */,
 				5344481818D4C9B6002E1D69 /* Images.xcassets in Resources */,
 				5344480E18D4C9B6002E1D69 /* Main_iPad.storyboard in Resources */,
 				5344480B18D4C9B6002E1D69 /* Main_iPhone.storyboard in Resources */,
 				5344480218D4C9B6002E1D69 /* InfoPlist.strings in Resources */,
+				F004AC3818D8F73400945D32 /* trail.sks in Resources */,
 				5344484118D4CBE2002E1D69 /* PLANE PROPELLER 2.png in Resources */,
 				5344483E18D4CBE2002E1D69 /* PLANE 8 R.png in Resources */,
 				5344483D18D4CBE2002E1D69 /* PLANE 8 N.png in Resources */,
