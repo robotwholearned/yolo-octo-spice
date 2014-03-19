@@ -45,7 +45,7 @@
         
         
         //adding the smokeTrail
-        NSString *smokePath = [[NSBundle mainBundle] pathForResource:@"Smoke" ofType:@"sks"];
+        NSString *smokePath = [[NSBundle mainBundle] pathForResource:@"trail" ofType:@"sks"];
         _smokeTrail = [NSKeyedUnarchiver unarchiveObjectWithFile:smokePath];
         _smokeTrail.position = CGPointMake(screenWidth/2, 15);
 
@@ -144,6 +144,6 @@
     self.plane.position = CGPointMake(newX, newY);
     self.planeShadow.position = CGPointMake(newXshadow, newYshadow);
     self.propeller.position = CGPointMake(newXpropeller, newYpropeller);
-    self.smokeTrail.position = CGPointMake(newX,newY-(_plane.size.height/2));
+    self.smokeTrail.position = CGPointMake(newX,newY-(self.plane.size.height/2));
 }
 @end
