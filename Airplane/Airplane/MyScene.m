@@ -48,7 +48,7 @@
         NSString *smokePath = [[NSBundle mainBundle] pathForResource:@"trail" ofType:@"sks"];
         _smokeTrail = [NSKeyedUnarchiver unarchiveObjectWithFile:smokePath];
         _smokeTrail.position = CGPointMake(screenWidth/2, 15);
-
+        
         [self addChild:background];
         [self addChild:_plane];
         [self addChild:_planeShadow];
@@ -67,9 +67,67 @@
              }
              
          }];
+        //wait for one and then run EnemiesAndClouds, repeat forever
+        [self runAction:[SKAction repeatActionForever:[SKAction sequence:@[[SKAction waitForDuration:1],[SKAction runBlock:^{[self EnemiesAndClouds];}]]]]];
+        
     }
     return self;
 }
+-(void)EnemiesAndClouds
+{
+    //CGPathAddCurveToPoint - creates a BEzier curve, with two control points
+    int goOrNot = [self getRandomNumberBetween:0 to:1];
+    if (goOrNot == 1)
+    {
+        SKSpriteNode *enemy;
+    
+        int randomEnemy = [self getRandomNumberBetween:0 to:1];
+        if(randomEnemy == 0)
+            enemy = [SKSpriteNode spriteNodeWithImageNamed:@"PLANE 1 N.png"];
+        else
+            enemy = [SKSpriteNode spriteNodeWithImageNamed:@"PLANE 2 N.png"];
+
+        enemy.scale = 0.6;
+        enemy.position = CGPointMake(screenRect.size.width/2, screenRect.size.height/2);
+        enemy.zPosition = 1;
+        
+        CGMutablePathRef cgpath = CGPathCreateMutable();
+        
+        //random values
+        float xStart = [self getRandomNumberBetween:0+enemy.size.width to:screenRect.size.width-enemy.size.width ];
+        float xEnd = [self getRandomNumberBetween:0+enemy.size.width to:screenRect.size.width-enemy.size.width ];
+        
+        //ControlPoint1
+        float cp1X = [self getRandomNumberBetween:0+enemy.size.width to:screenRect.size.width-enemy.size.width ];
+        float cp1Y = [self getRandomNumberBetween:0+enemy.size.width to:screenRect.size.width-enemy.size.height ];
+        
+        //ControlPoint2
+        float cp2X = [self getRandomNumberBetween:0+enemy.size.width to:screenRect.size.width-enemy.size.width ];
+        float cp2Y = [self getRandomNumberBetween:0 to:cp1Y];
+        
+        CGPoint s = CGPointMake(xStart, 1024.0);
+        CGPoint e = CGPointMake(xEnd, -100.0);
+        CGPoint cp1 = CGPointMake(cp1X, cp1Y);
+        CGPoint cp2 = CGPointMake(cp2X, cp2Y);;
+        CGPathMoveToPoint(cgpath, NULL, s.x, s.y);
+        CGPathAddCurveToPoint(cgpath, NULL, cp1.x, cp1.y, cp2.x, cp2.y, e.x, e.y);
+        
+        SKAction *planeDestroy = [SKAction followPath:cgpath asOffset:NO orientToPath:YES duration:5];
+        [self addChild:enemy];
+        
+     
+        SKAction *remove = [SKAction removeFromParent];
+        [enemy runAction:[SKAction sequence:@[planeDestroy, remove]]];
+        
+        CGPathRelease(cgpath);
+    }
+}
+
+-(int)getRandomNumberBetween:(int)from to:(int)to
+{
+    return (int)from + arc4random()%(to-from + 1);
+}
+
 //Now that you have the values of the accelerometer
 -(void)outputAccelertionData:(CMAcceleration)acceleration
 {
@@ -89,13 +147,11 @@
         currentMaxAccelY = acceleration.y;
     }
 }
-
 -(void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event
 {
     /* Called when a touch begins */
     //for (UITouch *touch in touches) {}
 }
-
 -(void)update:(CFTimeInterval)currentTime
 {
     /* Called before each frame is rendered */
