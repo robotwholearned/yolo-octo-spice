@@ -165,6 +165,13 @@
     bullet.position = CGPointMake(location.x, location.y + self.plane.size.height/2);
     bullet.zPosition = 1;
     bullet.scale = 0.8;
+    
+    bullet.physicsBody = [SKPhysicsBody bodyWithRectangleOfSize:bullet.size];
+    bullet.physicsBody.dynamic = NO;
+    bullet.physicsBody.categoryBitMask = bulletCategory;
+    bullet.physicsBody.contactTestBitMask = enemyCategory;
+    bullet.physicsBody.collisionBitMask = 0;
+    
 
     SKAction *action = [SKAction moveToY:self.frame.size.height+bullet.size.height duration:2];
     SKAction *remove = [SKAction removeFromParent];
@@ -172,7 +179,6 @@
     [bullet runAction:[SKAction sequence:@[action, remove]]];
     
     [self addChild:bullet];
-    
 }
 -(void)update:(CFTimeInterval)currentTime
 {
@@ -229,5 +235,29 @@
     self.planeShadow.position = CGPointMake(newXshadow, newYshadow);
     self.propeller.position = CGPointMake(newXpropeller, newYpropeller);
     self.smokeTrail.position = CGPointMake(newX,newY-(self.plane.size.height/2));
+}
+-(void)didBeginContact:(SKPhysicsContact *)contact
+{
+//    SKPhysicsBody *firstBody, *secondBody;
+//    
+//    if (contact.bodyA.categoryBitMask < contact.bodyB.categoryBitMask)
+//    {
+//        firstBody = contact.bodyA;
+//        secondBody = contact.bodyB;
+//    }
+//    else
+//    {
+//        firstBody = contact.bodyB;
+//        secondBody = contact.bodyA;
+//    }
+    
+    if ((contact.bodyA.categoryBitMask & bulletCategory) != 0 || (contact.bodyB.categoryBitMask & bulletCategory) != 0)
+    {
+        //SKNode *projectile = (contact.bodyA.categoryBitMask & bulletCategory)? contact.bodyA.node : contact.bodyB.node;
+        //SKNode *enemy = (contact.bodyA.categoryBitMask & bulletCategory) ? contact.bodyB.node : contact.bodyA.node;
+
+        [contact.bodyA.node runAction:[SKAction removeFromParent]];
+        [contact.bodyB.node runAction:[SKAction removeFromParent]];
+    }
 }
 @end
