@@ -10,4 +10,17 @@
 
 @implementation MenuScene
 
+-(id)initWithSize:(CGSize)size
+{
+    if (self = [super initWithSize:size])
+    {
+        self.backgroundColor = [SKColor colorWithRed:0.15 green:0.15 blue:0.3 alpha:1.0];
+        SKSpriteNode *title = [SKSpriteNode spriteNodeWithImageNamed:@"title"];
+        title.zPosition = 2;
+        title.position = CGPointMake(size.width/2, size.height/2);
+        
+        [self addChild:title];
+    }
+    return self;
+}
 @end
