@@ -8,6 +8,15 @@
 
 #import "MenuScene.h"
 
+@interface MenuScene ()
+{
+    CGSize sizeGlobal;
+    UIButton *singlePlayerButton;
+    UIButton *multiplayerButton;
+}
+
+@end
+
 @implementation MenuScene
 
 -(id)initWithSize:(CGSize)size
@@ -24,7 +33,51 @@
         title.blendMode = SKBlendModeAdd;
         
         [self addChild:title];
+        
+        sizeGlobal = size;
     }
     return self;
+}
+-(void)didMoveToView:(SKView *)view
+{
+    //to present the buttons when the game transitions to the menu view.
+    
+    UIImage *buttonImageSingle = [UIImage imageNamed:@"singleBtn"];
+    singlePlayerButton = [UIButton buttonWithType:UIButtonTypeRoundedRect];
+    NSLog(@"%f, %f", sizeGlobal.height, sizeGlobal.width);
+    
+    singlePlayerButton.frame = CGRectMake(view.frame.size.width/2 -( buttonImageSingle.size.height*2), view.frame.size.height, buttonImageSingle.size.width, buttonImageSingle.size.height);
+    
+    NSLog(@"%f, %f", singlePlayerButton.frame.origin.x, singlePlayerButton.frame.origin.y);
+    
+    singlePlayerButton.backgroundColor = [UIColor clearColor];
+    [singlePlayerButton setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
+    
+    UIImage *strechableButtonImageSingle = [buttonImageSingle stretchableImageWithLeftCapWidth:12 topCapHeight:0];
+    [singlePlayerButton setBackgroundImage:strechableButtonImageSingle forState:UIControlStateNormal];
+    [singlePlayerButton addTarget:self action:@selector(moveToSinglePlayerGame) forControlEvents:UIControlEventTouchUpInside];
+
+    UIImage *buttonImageMulti = [UIImage imageNamed:@"multiBtn"];
+    multiplayerButton = [UIButton buttonWithType:UIButtonTypeRoundedRect];
+    multiplayerButton.frame = CGRectMake(sizeGlobal.height/2+100, sizeGlobal.width/2+250, buttonImageMulti.size.width, buttonImageMulti.size.height);
+    multiplayerButton.backgroundColor = [UIColor clearColor];
+    [multiplayerButton setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
+    
+    UIImage *strechableButtonImageMulti = [buttonImageMulti stretchableImageWithLeftCapWidth:12 topCapHeight:0];
+    [multiplayerButton setBackgroundImage:strechableButtonImageMulti forState:UIControlStateNormal];
+    [multiplayerButton addTarget:self action:@selector(moveToMultiPlayerGame) forControlEvents:UIControlEventTouchUpInside];
+
+    
+    [self.view addSubview:singlePlayerButton];
+    [self.view addSubview:multiplayerButton];
+    
+}
+-(void)moveToSinglePlayerGame
+{
+    //transitions the game to the MyScene scene and removes the buttons.
+}
+-(void)moveToMultiPlayerGame
+{
+    //transitions the game to the MultiScene scene and also removes the buttons.
 }
 @end
