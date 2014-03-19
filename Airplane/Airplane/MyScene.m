@@ -179,19 +179,25 @@
     newY = 0;
     newX = 0;
     
-    newX = currentMaxAccelX * 10;
+//    float adjustForTheNoseShift = 0;
     
     if(currentMaxAccelX > 0.05)
     {
         self.plane.texture = [SKTexture textureWithImageNamed:@"PLANE 8 R"];
+        newX = currentMaxAccelX * 10;
+//        adjustForTheNoseShift = 0.10;
     }
     else if (currentMaxAccelX < -0.05)
     {
         self.plane.texture = [SKTexture textureWithImageNamed:@"PLANE 8 L"];
+        newX = currentMaxAccelX * 10;
+//        adjustForTheNoseShift = -0.10;
     }
     else
     {
         self.plane.texture = [SKTexture textureWithImageNamed:@"PLANE 8 N"];
+        newX = currentMaxAccelX * 10;
+//        adjustForTheNoseShift = 0;
     }
     newY = 6.0 + currentMaxAccelY * 10;
     
@@ -201,7 +207,7 @@
     newXshadow = MIN(MAX(newXshadow,minY+15),maxY+15);
     newYshadow = MIN(MAX(newYshadow,minX-15),maxX-15);
     
-    newXpropeller = newX+self.propeller.position.x;
+    newXpropeller = newX+self.propeller.position.x;// + adjustForTheNoseShift;
     newYpropeller = newY+self.propeller.position.y;
     
     newXpropeller = MIN(MAX(newXpropeller,minY),maxY);
