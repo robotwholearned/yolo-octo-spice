@@ -122,12 +122,10 @@
         CGPathRelease(cgpath);
     }
 }
-
 -(int)getRandomNumberBetween:(int)from to:(int)to
 {
     return (int)from + arc4random()%(to-from + 1);
 }
-
 //Now that you have the values of the accelerometer
 -(void)outputAccelertionData:(CMAcceleration)acceleration
 {
