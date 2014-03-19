@@ -9,7 +9,10 @@
 #import <SpriteKit/SpriteKit.h>
 #import <CoreMotion/CoreMotion.h>
 
-@interface MyScene : SKScene <UIAccelerometerDelegate>
+static const uint8_t bulletCategory = 1;
+static const uint8_t enemyCategory = 2;
+
+@interface MyScene : SKScene <UIAccelerometerDelegate, SKPhysicsContactDelegate>
 {
     CGRect screenRect;
     CGFloat screenHeight;

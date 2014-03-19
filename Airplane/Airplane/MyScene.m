@@ -17,6 +17,9 @@
         screenRect = [[UIScreen mainScreen] bounds];
         screenHeight = screenRect.size.height;
         screenWidth = screenRect.size.width;
+     
+        self.physicsWorld.gravity = CGVectorMake(0, 0);
+        self.physicsWorld.contactDelegate = self;
         
         SKSpriteNode *background = [SKSpriteNode spriteNodeWithImageNamed:@"airPlanesBackground"];
         background.position = CGPointMake(CGRectGetMidX(self.frame), CGRectGetMidY(self.frame));
