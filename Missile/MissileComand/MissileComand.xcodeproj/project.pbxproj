@@ -24,6 +24,8 @@
 		F004AC7518DA28F700945D32 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F004AC5018DA28F700945D32 /* UIKit.framework */; };
 		F004AC7D18DA28F700945D32 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = F004AC7B18DA28F700945D32 /* InfoPlist.strings */; };
 		F004AC7F18DA28F700945D32 /* MissileComandTests.m in Sources */ = {isa = PBXBuildFile; fileRef = F004AC7E18DA28F700945D32 /* MissileComandTests.m */; };
+		F004AC8A18DA2A1900945D32 /* MenuScene.m in Sources */ = {isa = PBXBuildFile; fileRef = F004AC8918DA2A1900945D32 /* MenuScene.m */; };
+		F004AC8D18DA2A4200945D32 /* MultiScene.m in Sources */ = {isa = PBXBuildFile; fileRef = F004AC8C18DA2A4200945D32 /* MultiScene.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -60,6 +62,10 @@
 		F004AC7A18DA28F700945D32 /* MissileComandTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "MissileComandTests-Info.plist"; sourceTree = "<group>"; };
 		F004AC7C18DA28F700945D32 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		F004AC7E18DA28F700945D32 /* MissileComandTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MissileComandTests.m; sourceTree = "<group>"; };
+		F004AC8818DA2A1900945D32 /* MenuScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MenuScene.h; sourceTree = "<group>"; };
+		F004AC8918DA2A1900945D32 /* MenuScene.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MenuScene.m; sourceTree = "<group>"; };
+		F004AC8B18DA2A4200945D32 /* MultiScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MultiScene.h; sourceTree = "<group>"; };
+		F004AC8C18DA2A4200945D32 /* MultiScene.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MultiScene.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -128,6 +134,10 @@
 				F004AC6418DA28F700945D32 /* ViewController.m */,
 				F004AC6618DA28F700945D32 /* MyScene.h */,
 				F004AC6718DA28F700945D32 /* MyScene.m */,
+				F004AC8818DA2A1900945D32 /* MenuScene.h */,
+				F004AC8918DA2A1900945D32 /* MenuScene.m */,
+				F004AC8B18DA2A4200945D32 /* MultiScene.h */,
+				F004AC8C18DA2A4200945D32 /* MultiScene.m */,
 				F004AC6918DA28F700945D32 /* Spaceship.png */,
 				F004AC6B18DA28F700945D32 /* Images.xcassets */,
 				F004AC5518DA28F700945D32 /* Supporting Files */,
@@ -263,8 +273,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				F004AC6818DA28F700945D32 /* MyScene.m in Sources */,
+				F004AC8A18DA2A1900945D32 /* MenuScene.m in Sources */,
 				F004AC6518DA28F700945D32 /* ViewController.m in Sources */,
 				F004AC5F18DA28F700945D32 /* AppDelegate.m in Sources */,
+				F004AC8D18DA2A4200945D32 /* MultiScene.m in Sources */,
 				F004AC5B18DA28F700945D32 /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
