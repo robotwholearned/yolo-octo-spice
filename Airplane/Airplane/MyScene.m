@@ -94,6 +94,12 @@
         enemy.position = CGPointMake(screenRect.size.width/2, screenRect.size.height/2);
         enemy.zPosition = 1;
         
+        enemy.physicsBody = [SKPhysicsBody bodyWithRectangleOfSize:enemy.size];
+        enemy.physicsBody.dynamic = YES;
+        enemy.physicsBody.categoryBitMask = enemyCategory;
+        enemy.physicsBody.contactTestBitMask = bulletCategory;
+        enemy.physicsBody.collisionBitMask = 0;
+        
         CGMutablePathRef cgpath = CGPathCreateMutable();
         
         //random values
