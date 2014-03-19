@@ -35,6 +35,8 @@
 		F004AC3818D8F73400945D32 /* trail.sks in Resources */ = {isa = PBXBuildFile; fileRef = F004AC3618D8F73400945D32 /* trail.sks */; };
 		F004AC3918D8F73400945D32 /* spark.png in Resources */ = {isa = PBXBuildFile; fileRef = F004AC3718D8F73400945D32 /* spark.png */; };
 		F004AC3B18D9FA2400945D32 /* smokeTrail.png in Resources */ = {isa = PBXBuildFile; fileRef = F004AC3A18D9FA2400945D32 /* smokeTrail.png */; };
+		F004AC3D18DA1C7900945D32 /* Explosion.atlas in Resources */ = {isa = PBXBuildFile; fileRef = F004AC3C18DA1C7900945D32 /* Explosion.atlas */; };
+		F004AC3F18DA1E6400945D32 /* Clouds.atlas in Resources */ = {isa = PBXBuildFile; fileRef = F004AC3E18DA1E6400945D32 /* Clouds.atlas */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -82,6 +84,8 @@
 		F004AC3618D8F73400945D32 /* trail.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = trail.sks; sourceTree = "<group>"; };
 		F004AC3718D8F73400945D32 /* spark.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = spark.png; sourceTree = "<group>"; };
 		F004AC3A18D9FA2400945D32 /* smokeTrail.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = smokeTrail.png; sourceTree = "<group>"; };
+		F004AC3C18DA1C7900945D32 /* Explosion.atlas */ = {isa = PBXFileReference; lastKnownFileType = folder.skatlas; path = Explosion.atlas; sourceTree = "<group>"; };
+		F004AC3E18DA1E6400945D32 /* Clouds.atlas */ = {isa = PBXFileReference; lastKnownFileType = folder.skatlas; path = Clouds.atlas; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -161,6 +165,8 @@
 		534447FE18D4C9B6002E1D69 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				F004AC3E18DA1E6400945D32 /* Clouds.atlas */,
+				F004AC3C18DA1C7900945D32 /* Explosion.atlas */,
 				F004AC3A18D9FA2400945D32 /* smokeTrail.png */,
 				F004AC3618D8F73400945D32 /* trail.sks */,
 				F004AC3718D8F73400945D32 /* spark.png */,
@@ -274,8 +280,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				5344481618D4C9B6002E1D69 /* Spaceship.png in Resources */,
+				F004AC3F18DA1E6400945D32 /* Clouds.atlas in Resources */,
 				5344483F18D4CBE2002E1D69 /* PLANE 8 SHADOW.png in Resources */,
 				F004AC3B18D9FA2400945D32 /* smokeTrail.png in Resources */,
+				F004AC3D18DA1C7900945D32 /* Explosion.atlas in Resources */,
 				5344483B18D4CBE1002E1D69 /* airPlanesBackground.png in Resources */,
 				F004AC3918D8F73400945D32 /* spark.png in Resources */,
 				5344481818D4C9B6002E1D69 /* Images.xcassets in Resources */,

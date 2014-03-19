@@ -26,5 +26,7 @@ static const uint8_t enemyCategory = 2;
 @property SKSpriteNode *propeller;
 @property (strong, nonatomic) CMMotionManager *motionManager;
 @property SKEmitterNode *smokeTrail;
+@property NSMutableArray *explosionTextures;
+@property NSMutableArray *cloudTextures;
 
 @end
