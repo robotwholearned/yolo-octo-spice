@@ -34,6 +34,7 @@
 		5344484118D4CBE2002E1D69 /* PLANE PROPELLER 2.png in Resources */ = {isa = PBXBuildFile; fileRef = 5344483A18D4CBE1002E1D69 /* PLANE PROPELLER 2.png */; };
 		F004AC3818D8F73400945D32 /* trail.sks in Resources */ = {isa = PBXBuildFile; fileRef = F004AC3618D8F73400945D32 /* trail.sks */; };
 		F004AC3918D8F73400945D32 /* spark.png in Resources */ = {isa = PBXBuildFile; fileRef = F004AC3718D8F73400945D32 /* spark.png */; };
+		F004AC3B18D9FA2400945D32 /* smokeTrail.png in Resources */ = {isa = PBXBuildFile; fileRef = F004AC3A18D9FA2400945D32 /* smokeTrail.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -80,6 +81,7 @@
 		5344483A18D4CBE1002E1D69 /* PLANE PROPELLER 2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "PLANE PROPELLER 2.png"; sourceTree = "<group>"; };
 		F004AC3618D8F73400945D32 /* trail.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = trail.sks; sourceTree = "<group>"; };
 		F004AC3718D8F73400945D32 /* spark.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = spark.png; sourceTree = "<group>"; };
+		F004AC3A18D9FA2400945D32 /* smokeTrail.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = smokeTrail.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -159,6 +161,7 @@
 		534447FE18D4C9B6002E1D69 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				F004AC3A18D9FA2400945D32 /* smokeTrail.png */,
 				F004AC3618D8F73400945D32 /* trail.sks */,
 				F004AC3718D8F73400945D32 /* spark.png */,
 				5344483418D4CBE1002E1D69 /* airPlanesBackground.png */,
@@ -272,6 +275,7 @@
 			files = (
 				5344481618D4C9B6002E1D69 /* Spaceship.png in Resources */,
 				5344483F18D4CBE2002E1D69 /* PLANE 8 SHADOW.png in Resources */,
+				F004AC3B18D9FA2400945D32 /* smokeTrail.png in Resources */,
 				5344483B18D4CBE1002E1D69 /* airPlanesBackground.png in Resources */,
 				F004AC3918D8F73400945D32 /* spark.png in Resources */,
 				5344481818D4C9B6002E1D69 /* Images.xcassets in Resources */,
