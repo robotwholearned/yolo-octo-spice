@@ -7,6 +7,8 @@
 //
 
 #import "MenuScene.h"
+#import "MyScene.h"
+#import "MultiScene.h"
 
 @interface MenuScene ()
 {
@@ -46,7 +48,7 @@
     singlePlayerButton = [UIButton buttonWithType:UIButtonTypeRoundedRect];
     NSLog(@"%f, %f", sizeGlobal.height, sizeGlobal.width);
     
-    singlePlayerButton.frame = CGRectMake(view.frame.size.width/2 -( buttonImageSingle.size.height*2), view.frame.size.height, buttonImageSingle.size.width, buttonImageSingle.size.height);
+    singlePlayerButton.frame = CGRectMake(sizeGlobal.height/8, sizeGlobal.width/2+250, buttonImageSingle.size.width, buttonImageSingle.size.height);
     
     NSLog(@"%f, %f", singlePlayerButton.frame.origin.x, singlePlayerButton.frame.origin.y);
     
@@ -66,18 +68,32 @@
     UIImage *strechableButtonImageMulti = [buttonImageMulti stretchableImageWithLeftCapWidth:12 topCapHeight:0];
     [multiplayerButton setBackgroundImage:strechableButtonImageMulti forState:UIControlStateNormal];
     [multiplayerButton addTarget:self action:@selector(moveToMultiPlayerGame) forControlEvents:UIControlEventTouchUpInside];
-
+    
     
     [self.view addSubview:singlePlayerButton];
     [self.view addSubview:multiplayerButton];
     
 }
+//Create an instance of either MyScene or MultiScene.
+//Create a scene transition.
+//Present the new scene.
+//Remove the buttons.
 -(void)moveToSinglePlayerGame
 {
-    //transitions the game to the MyScene scene and removes the buttons.
+    MyScene *myScene = [[MyScene alloc] initWithSize:sizeGlobal];
+
+    [self.view presentScene:myScene transition:[SKTransition revealWithDirection:SKTransitionDirectionLeft duration:1]];
+    [self cleanupButtons];
 }
 -(void)moveToMultiPlayerGame
 {
-    //transitions the game to the MultiScene scene and also removes the buttons.
+    MultiScene *multiScene = [[MultiScene alloc] initWithSize:sizeGlobal];
+    [self.view presentScene:multiScene transition:[SKTransition revealWithDirection:SKTransitionDirectionLeft duration:1]];
+    [self cleanupButtons];
+}
+-(void)cleanupButtons
+{
+    [singlePlayerButton removeFromSuperview];
+    [multiplayerButton removeFromSuperview];
 }
 @end
