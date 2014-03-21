@@ -46,11 +46,11 @@
     
     UIImage *buttonImageSingle = [UIImage imageNamed:@"singleBtn"];
     singlePlayerButton = [UIButton buttonWithType:UIButtonTypeRoundedRect];
-    NSLog(@"%f, %f", sizeGlobal.height, sizeGlobal.width);
+    //NSLog(@"%f, %f", sizeGlobal.height, sizeGlobal.width);
     
     singlePlayerButton.frame = CGRectMake(sizeGlobal.height/8, sizeGlobal.width/2+250, buttonImageSingle.size.width, buttonImageSingle.size.height);
     
-    NSLog(@"%f, %f", singlePlayerButton.frame.origin.x, singlePlayerButton.frame.origin.y);
+    //NSLog(@"%f, %f", singlePlayerButton.frame.origin.x, singlePlayerButton.frame.origin.y);
     
     singlePlayerButton.backgroundColor = [UIColor clearColor];
     [singlePlayerButton setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
@@ -80,15 +80,16 @@
 //Remove the buttons.
 -(void)moveToSinglePlayerGame
 {
-    MyScene *myScene = [[MyScene alloc] initWithSize:sizeGlobal];
-
-    [self.view presentScene:myScene transition:[SKTransition revealWithDirection:SKTransitionDirectionLeft duration:1]];
+    SKScene * scene = [MyScene sceneWithSize:self.view.bounds.size];
+    scene.scaleMode = SKSceneScaleModeAspectFill;
+    [(SKView *)self.view presentScene:scene transition:[SKTransition revealWithDirection:SKTransitionDirectionLeft duration:0.5]];
     [self cleanupButtons];
 }
 -(void)moveToMultiPlayerGame
 {
-    MultiScene *multiScene = [[MultiScene alloc] initWithSize:sizeGlobal];
-    [self.view presentScene:multiScene transition:[SKTransition revealWithDirection:SKTransitionDirectionLeft duration:1]];
+    SKScene * scene = [MultiScene sceneWithSize:self.view.bounds.size];
+    scene.scaleMode = SKSceneScaleModeAspectFill;
+    [(SKView *)self.view presentScene:scene transition:[SKTransition revealWithDirection:SKTransitionDirectionLeft duration:0.5]];
     [self cleanupButtons];
 }
 -(void)cleanupButtons
