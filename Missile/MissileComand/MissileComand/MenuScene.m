@@ -30,7 +30,8 @@
         SKSpriteNode *title = [SKSpriteNode spriteNodeWithImageNamed:@"title"];
         title.zPosition = 2;
         title.scale = 0.5;
-        title.position = CGPointMake(size.width/2, size.height/2);
+        //title.position = CGPointMake(self.frame.size.width/2-(title.size.width/2), self.frame.size.height/2-(title.size.height/2));
+        title.position = CGPointMake(0, 0);
         
         title.blendMode = SKBlendModeAdd;
         
@@ -46,11 +47,11 @@
     
     UIImage *buttonImageSingle = [UIImage imageNamed:@"singleBtn"];
     singlePlayerButton = [UIButton buttonWithType:UIButtonTypeRoundedRect];
-    //NSLog(@"%f, %f", sizeGlobal.height, sizeGlobal.width);
+    NSLog(@"%f, %f", sizeGlobal.height, sizeGlobal.width);
     
     singlePlayerButton.frame = CGRectMake(sizeGlobal.height/8, sizeGlobal.width/2+250, buttonImageSingle.size.width, buttonImageSingle.size.height);
     
-    //NSLog(@"%f, %f", singlePlayerButton.frame.origin.x, singlePlayerButton.frame.origin.y);
+    NSLog(@"%f, %f", singlePlayerButton.frame.origin.x, singlePlayerButton.frame.origin.y);
     
     singlePlayerButton.backgroundColor = [UIColor clearColor];
     [singlePlayerButton setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
@@ -82,14 +83,14 @@
 {
     SKScene * scene = [MyScene sceneWithSize:self.view.bounds.size];
     scene.scaleMode = SKSceneScaleModeAspectFill;
-    [(SKView *)self.view presentScene:scene transition:[SKTransition revealWithDirection:SKTransitionDirectionLeft duration:0.5]];
+    [(SKView *)self.view presentScene:scene transition:[SKTransition revealWithDirection:SKTransitionDirectionLeft duration:0.0]];
     [self cleanupButtons];
 }
 -(void)moveToMultiPlayerGame
 {
     SKScene * scene = [MultiScene sceneWithSize:self.view.bounds.size];
     scene.scaleMode = SKSceneScaleModeAspectFill;
-    [(SKView *)self.view presentScene:scene transition:[SKTransition revealWithDirection:SKTransitionDirectionLeft duration:0.5]];
+    [(SKView *)self.view presentScene:scene transition:[SKTransition revealWithDirection:SKTransitionDirectionLeft duration:0.0]];
     [self cleanupButtons];
 }
 -(void)cleanupButtons

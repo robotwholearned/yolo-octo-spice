@@ -8,6 +8,13 @@
 
 #import <SpriteKit/SpriteKit.h>
 
-@interface MyScene : SKScene
+typedef enum : NSUInteger
+{
+    ExplosionCategory   = (1 << 0),
+    MissileCategory     = (1 << 1),
+    MonsterCategory     = (1 << 2)
+} NodeCategory;
+
+@interface MyScene : SKScene <SKPhysicsContactDelegate>
 
 @end
